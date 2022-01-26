@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring 1주차 </title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <title>detail</title>
+<script>
+
+</script>
+
+<style>
+    .background-header {
+        position: fixed;
+        z-index: -1;
+        top: 0px;
+        width: 100%;
+        height: 428px;
+        background-color: lightsalmon;
+    }
+
+    .background-body {
+        position: fixed;
+        z-index: -1;
+        top: 428px;
+        height: 100%;
+        width: 100%;
+        background-color: #dee2e6;
+    }
+
+    .header {
+        margin-top: 50px;
+    }
+    .header h2 {
+        /*font-family: 'Noto Sans KR', sans-serif;*/
+        height: 33px;
+        font-size: 42px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 0.79;
+        letter-spacing: -0.5px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .header p {
+        margin: 40px auto;
+        width: 217px;
+        height: 48px;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: -1.12px;
+        text-align: center;
+        color: #ffffff;
+    }
+    .message{
+        width: 500px;
+        margin: auto;
+    }
+    .message-body{
+        font-size: 20px;
+    }
+    .date{
+        font-size: 12px;
+    }
+</style>
+</head>
+
+<body>
+    <div class="background-header">
+
+    </div>
+    <div class="background-body">
+
+    </div>
+    <div class="header">
+        <h2>게시글 조회 </h2>
+        <p>
+            게시글이 보여집니다.
+        </p>
+    </div>
+    <article class="message is-light">
+        <div class="message-header">
+            <p>[[${title}]]</p>
+            <button class="delete" onclick="window.location.href = '/'"></button>
+        </div>
+        <div class="message-body">
+            [[${contents}]]
+            <p></p>
+            <p class="date"> [[${createdAt}]] [[${username}]]</p>
+    </article>
+</body>
+</html>
