@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spring 1주차 </title>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 
 
     <script>
         // 사용자가 내용을 올바르게 입력하였는지 확인합니다.
         function isValidContents(contents) {
-            if (contents == '') {
+            if (contents === '') {
                 alert('내용을 입력해주세요');
                 return false;
             }
@@ -59,8 +58,8 @@
                 contentType: "application/json", // JSON 형식으로 전달함을 알리기
                 data: JSON.stringify(data),
                 success: function (response) {
-                    alert('메시지가 성공적으로 작성되었습니다.');
-                    window.location.href('/');
+                    alert('내용이 작성되었습니다');
+                    window.location.href=('/');
                 }
             });
         }
@@ -115,7 +114,7 @@
             text-align: center;
             color: #ffffff;
         }
-        .form-group1 {
+        .wrap {
            width: 500px;
             margin: auto;
         }
@@ -128,21 +127,6 @@
             display: block;
             margin: auto;
         }
-        .form-group2 img{
-            cursor: pointer;
-            position: absolute;
-            width: 22.2px;
-            height: 18.7px;
-            bottom: 15px;
-            right: 17px;
-        }
-        .form-group2{
-            position: relative;
-            width: 500px;
-            margin: auto;
-        }
-
-
 
 
     </style>
@@ -150,6 +134,7 @@
 </head>
 
 <body>
+
 <div class="background-header">
 
 </div>
@@ -169,7 +154,7 @@
     </div>
     <div class="form-group2">
         <textarea class="textarea" id="Textarea1" placeholder="contents" cols="30" rows="10"></textarea>
-        <button  class="button is-outlined" onclick="writePost()">저장</button>
+        <button id="submit" type="button" class="button is-outlined" onclick="writePost()">저장</button>
     </div>
 
 
